@@ -106,8 +106,32 @@ cd ..
 ```python
 vi pyproject.toml
 # 插入下面的内容
+# pyproject.toml
+[build-system]
+requires = [
+    "setuptools>=64",
+    "wheel",
+    "torch==2.0.0"
+]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "deformable_aggregation_ext"
+version = "0.0.0"
+description = "Deformable Aggregation Extension for MMDetection3D"
+requires-python = ">=3.7"
+
+[tool.setuptools]
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["."]
 ```
+等这个文件搞好之后，就可以执行了
+```python
+pip install -e . --config-settings editable_mode=compat
+```
+这个比下面的方式好用。实测，没有bug
 ```python
 # Compile the deformable_aggregation CUDA op
 cd projects/mmdet3d_plugin/ops
@@ -120,6 +144,10 @@ python3 setup.py develop
 cd ../../
 ###
 ```
+--------------------------------
+
+环境装好了，是时候跑一跑代码，see see color
+
 
 
 Acknowledge
