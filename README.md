@@ -201,6 +201,15 @@ bash local_train.sh JRDB_OmniTrack
 # test
 bash local_test.sh JRDB_OmniTrack path/to/checkpoint
 ```
+```python
+# 果然有 Color,上来就给我来个 iou3d_nms_cuda 没有编译，吓我一跳，还以为是mmcv的问题。
+# 结果还是一样，但是这个包藏得很深，我在CenterPoint
+
+# copying build/lib.linux-x86_64-cpython-310/iou3d_nms_cuda.cpython-310-x86_64-linux-gnu.so ->
+cd /home/xxx/OmniTrack-main/projects/mmdet3d_plugin/ops/iou3d_nms
+python setup.py build_ext --inplace
+
+```
 Acknowledge
 
 首先致谢本文的基线模型，也是本工作影响最大的模型：UMDATrack 和 OmniTrack
@@ -219,3 +228,5 @@ Acknowledge
   year={2025}
 }
 ```
+Thanks
+https://github.com/tianweiy/CenterPoint/tree/d3a248fa56db2601860d576d5934d00fee9916eb
