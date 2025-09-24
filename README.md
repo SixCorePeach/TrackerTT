@@ -152,16 +152,19 @@ cd ../../
 
 Acknowledge
 
-首先致谢本文的基线模型，也是本工作影响最大的模型：UMDATrack。
+首先致谢本文的基线模型，也是本工作影响最大的模型：UMDATrack 和 OmniTrack
+```
 @inproceedings{yao2025umdatrack,
   title={UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions},
   author={Yao, Siyuan and Zhu, Rui and Wang, Ziqi and Ren, Wenqi and Yan, Yanyang and Cao, Xiaochun},
   booktitle={ICCV},
   year={2025}
 }
+
 @inproceedings{luo2025omniTrack,
   title={Omnidirectional Multi-Object Tracking},
   author={Kai Luo, Hao Shi, Sheng Wu, Fei Teng, Mengfei Duan, Chang Huang, Yuhang Wang, Kaiwei Wang, Kailun Yang},
   booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2025}
 }
+```
