@@ -191,6 +191,11 @@ print('RoIAlign available:', hasattr(RoIAlign, 'forward'))
 
 ```
 
+```python
+# https://github.com/state-spaces/mamba/releases
+到这里选一个合适版本的mamba
+
+```
 --------------------------------
 
 环境装好了，是时候跑一跑代码，see see color
