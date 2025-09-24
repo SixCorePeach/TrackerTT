@@ -105,8 +105,9 @@ cd ..
 并且在安装完成后，要在这个步骤，也就是再下面这个步骤执行之前，加上一个文件
 ```python
 vi pyproject.toml
-# 插入下面的内容
-# pyproject.toml
+```
+插入下面的内容
+```python
 [build-system]
 requires = [
     "setuptools>=64",
@@ -144,6 +145,42 @@ python3 setup.py develop
 cd ../../
 ###
 ```
+
+然后就是mmcv-full，远没有想的那么简单，但是好像搞了半天，也没那么复杂，我先等等结果。应该问题不大才对。
+
+首先到https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/mmcv-full/ 下载一个 mmcv-full-1.7.2.tar.gz
+然后解压到项目的目录下面
+```python
+cd /home/xxx/OmniTrack-main/mmcv-full-1.7.2
+
+# 彻底清理
+rm -rf build/ dist/ *.egg-info/
+find . -name "*.so" -delete
+```
+设置环境变量，注意 cuda的位置可能不一样，如果一样就这么设置
+```python
+export MMCV_WITH_OPS=1
+export CUDA_HOME=/usr/local/cuda-11.8
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+```
+设置好了之后
+**手动编译（关键！）**   这个build_ext 选项很重要，缺了就不得行
+
+```python
+python setup.py build_ext --inplace
+
+# 等待 ~~
+# 出现 copying build/lib.linux-x86_64-cpython-310/mmcv/_ext.cpython-310-x86_64-linux-gnu.so -> mmcv
+```
+```python
+ls -l mmcv/_ext*.so
+# -rwxrwxr-x 1 ctt ctt 16129456  9月 24 23:23 mmcv/_ext.cpython-310-x86_64-linux-gnu.so
+
+pip install -e . --no-deps
+# Successfully uninstalled mmcv-full-1.7.2
+```
+
 --------------------------------
 
 环境装好了，是时候跑一跑代码，see see color
