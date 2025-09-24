@@ -194,9 +194,13 @@ print('RoIAlign available:', hasattr(RoIAlign, 'forward'))
 --------------------------------
 
 环境装好了，是时候跑一跑代码，see see color
+```python
+# train
+bash local_train.sh JRDB_OmniTrack
 
-
-
+# test
+bash local_test.sh JRDB_OmniTrack path/to/checkpoint
+```
 Acknowledge
 
 首先致谢本文的基线模型，也是本工作影响最大的模型：UMDATrack 和 OmniTrack
