@@ -179,6 +179,16 @@ ls -l mmcv/_ext*.so
 
 pip install -e . --no-deps
 # Successfully uninstalled mmcv-full-1.7.2
+
+
+# 验证一下
+python -c "
+from mmcv.ops import RoIPool, RoIAlign
+import mmcv                                                     
+print('mmcv-full dd！')
+print('mmcv version:', mmcv.__version__)
+print('RoIAlign available:', hasattr(RoIAlign, 'forward'))
+
 ```
 
 --------------------------------
