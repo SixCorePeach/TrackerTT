@@ -66,6 +66,24 @@ JRDB2019
 用的时候还涉及两个包：
 pycocotools
 pyquaternion
+检查以上没有问题后，运行数据处理方法：
+```python
+python JRDB2019_2d_stitched_converter.py
+```
+会有下面的场景：
+```python
+(base) ctt@cq:~/paper3/OmniTrack-main/tools$ python JRDB2019_2d_stitched_converter.py 
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:07<00:00,  2.79it/s]
+Save JRDB_infos_train_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 27/27 [00:01<00:00, 15.72it/s]
+Save JRDB_infos_train_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
+Save JRDB_infos_test_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:02<00:00,  3.07it/s]
+Save JRDB_infos_train_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
+Save JRDB_infos_val_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
+Save JRDB_infos_test_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
+```
+这一步很顺利，继续。
 
 
 Acknowledge
