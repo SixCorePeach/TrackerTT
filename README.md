@@ -63,9 +63,7 @@ JRDB2019
 │   └── timestamps
 │   ...
 ```
-用的时候还涉及两个包：
-pycocotools
-pyquaternion
+
 检查以上没有问题后，运行数据处理方法：
 ```python
 python JRDB2019_2d_stitched_converter.py
@@ -84,6 +82,19 @@ Save JRDB_infos_val_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d
 Save JRDB_infos_test_v1.2.pkl to /home/ctt/paper3/OmniTrack-main/data/JRDB2019_2d_stitched_anno_pkls
 ```
 这一步很顺利，继续。
+这里碰到了问题，安装的transformers的版本过高
+```python
+
+python anchor_2d_generator.py --ann_file ../data/JRDB2019_2d_stitched_anno_pkls/JRDB_infos_train_v1.2.pkl
+```
+```python
+pip uninstall transformers -y
+pip install transformers==4.37.0
+```
+然后又蹦出来几个包
+
+环境是块难啃的骨头，换一台机器可能就不行。这不，我装了发现numpy 版本不对，欸嘿，torch版本也不对，cuda总该对吧。
+选取 cuda 11.8 + torch 2.0.0 + mmvc-full 1.7.1 numpy 1.26.4
 
 
 Acknowledge
