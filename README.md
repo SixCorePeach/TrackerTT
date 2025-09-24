@@ -37,7 +37,35 @@ trackingnet的下载地址在上方，这里不再缀诉。
 到这里，数据集已经全部处理完成，开始跑实验
 
 2025-09-24 终于开始跑实验了，首先进行Omini的baseline模型 的train 和 test安排（使用的市JRDB和他们自己发布的）
+噢对了，放上该工作的链接：https://github.com/xifen523/OmniTrack
 
+先准备数据噢，上面已经下好了，得放在这个位置：
+```python  
+.../OmniTrack/data/JRDB2019    # 要在data下面建立一个 JRDB2019
+
+cd data
+mkdir JRDB2019
+
+JRDB2019
+├── test_dataset_without_labels
+│   ├── calibration
+│   ├── detections
+│   ├── images
+│   ├── pointclouds
+│   └── timestamps
+│   ...
+├── train_dataset_with_activity
+│   ├── calibration
+│   ├── detections
+│   ├── images
+│   ├── labels
+│   ├── pointclouds
+│   └── timestamps
+│   ...
+```
+用的时候还涉及两个包：
+pycocotools
+pyquaternion
 
 
 Acknowledge
@@ -47,5 +75,11 @@ Acknowledge
   title={UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions},
   author={Yao, Siyuan and Zhu, Rui and Wang, Ziqi and Ren, Wenqi and Yan, Yanyang and Cao, Xiaochun},
   booktitle={ICCV},
+  year={2025}
+}
+@inproceedings{luo2025omniTrack,
+  title={Omnidirectional Multi-Object Tracking},
+  author={Kai Luo, Hao Shi, Sheng Wu, Fei Teng, Mengfei Duan, Chang Huang, Yuhang Wang, Kaiwei Wang, Kailun Yang},
+  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2025}
 }
