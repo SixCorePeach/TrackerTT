@@ -36,6 +36,10 @@ trackingnet的下载地址在上方，这里不再缀诉。
 
 到这里，数据集已经全部处理完成，开始跑实验
 
+2025-09-24 终于开始跑实验了，首先进行Omini的baseline模型 的train 和 test安排（使用的市JRDB和他们自己发布的）
+
+
+
 Acknowledge
 
 首先致谢本文的基线模型，也是本工作影响最大的模型：UMDATrack。
