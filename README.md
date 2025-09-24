@@ -194,7 +194,7 @@ print('RoIAlign available:', hasattr(RoIAlign, 'forward'))
 ```python
 # https://github.com/state-spaces/mamba/releases
 到这里选一个合适版本的mamba
-
+pip install mamba_ssm-2.0.4+cu118torch2.0cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 ```
 --------------------------------
 
