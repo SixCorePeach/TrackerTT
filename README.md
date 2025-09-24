@@ -95,6 +95,31 @@ pip install transformers==4.37.0
 
 环境是块难啃的骨头，换一台机器可能就不行。这不，我装了发现numpy 版本不对，欸嘿，torch版本也不对，cuda总该对吧。
 选取 cuda 11.8 + torch 2.0.0 + mmvc-full 1.7.1 numpy 1.26.4
+```python
+cd mmcv-full-1.7.1
+
+# for mmcv-full-1.7.1 GPU version with pip == 24.2
+MMCV_WITH_OPS=1 pip install -e .
+cd ..
+```
+并且在安装完成后，要在这个步骤，也就是再下面这个步骤执行之前，加上一个文件
+```python
+vi pyproject.toml
+# 插入下面的内容
+
+```
+```python
+# Compile the deformable_aggregation CUDA op
+cd projects/mmdet3d_plugin/ops
+python3 setup.py develop
+cd ../../../
+
+# Compile the jrdb_toolkit nms
+cd jrdb_toolkit/detection_eval
+python3 setup.py develop
+cd ../../
+###
+```
 
 
 Acknowledge
