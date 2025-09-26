@@ -6,6 +6,8 @@
 1、 trackingnet：https://zhuanlan.zhihu.com/p/673825440
 在下载完后，还需要将这些大的资源包进行组合和解压，是一个大工程，光下载就得两三天。
 然后组装需要每一个都进行，而且不能出错。怪不得大佬说，good luck！
+我来试试数据集拼接的过程
+
 
 处理的代码在上面的tools 文件里
 
@@ -215,6 +217,12 @@ bash local_test.sh JRDB_OmniTrack path/to/checkpoint
 cd /home/xxx/OmniTrack-main/projects/mmdet3d_plugin/ops/iou3d_nms
 python setup.py build_ext --inplace
 ```
+
+
+
+在OmniTrack模型调通之后，我们开始着手UmdaTrack的部署。
+
+
 
 Acknowledge
 
